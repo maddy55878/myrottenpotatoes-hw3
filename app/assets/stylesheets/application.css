@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body { 
+    background-color: #d88f61;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
