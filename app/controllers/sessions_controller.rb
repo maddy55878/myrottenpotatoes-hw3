@@ -1,4 +1,5 @@
   class SessionsController < ApplicationController
+    raise request.env["omniauth.auth"].to_yaml
   # user shouldn't have to be logged in before logging in!
   skip_before_action :set_current_user
   def create
