@@ -11,7 +11,7 @@
 #
 
 class Movieuser < ApplicationRecord
-  has_many :reviews
+  has_many :movies, :through => :reviews
     # Edit app/models/moviegoer.rb to look like this:
   def self.create_with_omniauth(auth)
     Movieuser.create!(

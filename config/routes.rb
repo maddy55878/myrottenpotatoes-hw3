@@ -6,4 +6,7 @@ Myrottenpotatoes::Application.routes.draw do
   get 'logout' => 'sessions#destroy'
 
   get 'auth/failure' => 'sessions#failure'
+  resources :movies do
+    resources :reviews 
+  end
 end
