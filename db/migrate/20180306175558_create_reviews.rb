@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.string :integer
       t.string :comments
       t.references :movie, foreign_key: true
-      t.references :movieuser, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

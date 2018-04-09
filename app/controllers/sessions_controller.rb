@@ -1,19 +1,14 @@
   class SessionsController < ApplicationController
-    raise request.env["omniauth.auth"].to_yaml
   # user shouldn't have to be logged in before logging in!
-  skip_before_action :set_current_user
+  skip_before_action :current_user
   def create
-    auth=request.env["omniauth.auth"]
-    user=Movieuser.find_by_provider_and_uid(auth["provider"],auth["uid"]) ||
-      Movieuser.create_with_omniauth(auth)
-    session[:user_id] = user.id
-    session[:provider] = auth["provider"]
-    redirect_to movies_path
+    user = User.from_omniauth(request.env["omniauth.auth"])   
+    session[:user_id] = user.uid
+    redirect_to root_path
   end
   def destroy
-    session.delete(:user_id)
-    flash[:notice] = 'Logged out successfully.'
-    redirect_to movies_path
+    session[:user_id] = nil
+    redirect_to root_path
   end
 end
 

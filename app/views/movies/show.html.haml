@@ -18,3 +18,18 @@
 = link_to 'Edit info', edit_movie_path(@movie)
 = link_to 'Delete', movie_path(@movie), :method => :delete
 = link_to 'Back to movie list', movies_path
+= link_to 'Add Review', new_movie_review_path(@movie)
+
+// %h1 All Reviews 
+// %table#reviews
+//   %thead
+//     %tr
+//       %th Potatoes given
+//       %th User 
+//       %th Comments
+//   %tbody
+//     - @movie.reviews.each do |review|
+//       %tr
+//         %td= review.potatoes 
+//         %td= review.user
+//         %td= review.comments

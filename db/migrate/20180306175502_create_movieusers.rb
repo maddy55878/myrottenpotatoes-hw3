@@ -1,6 +1,6 @@
-class CreateMovieusers < ActiveRecord::Migration[5.1]
+class Createusers < ActiveRecord::Migration[5.1]
   def change
-    create_table :movieusers do |t|
+    create_table :users do |t|
       t.string :name
       t.string :provider
       t.string :uid
