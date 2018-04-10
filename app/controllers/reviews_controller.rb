@@ -24,7 +24,8 @@ before_action :has_moviegoer_and_movie, :only => [:new, :create]
     # assigned by the mass-assignment from params[:review], we set it
     # by using the << method on the association.  We could also
     # set it manually with review.moviegoer = @current_user.
-    @movie.reviews.build(review_params)
+    @current_user.reviews <<
+@movie.reviews.build(review_params)
     redirect_to movie_path(@movie)
   end
 end
