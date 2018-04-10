@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :reviews
+      has_many :reviews
 
 has_many :movies, :through => :reviews 
 def self.from_omniauth(auth)
@@ -11,5 +11,5 @@ def self.from_omniauth(auth)
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
-  end
+end
 end
